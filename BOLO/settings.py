@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # External
     'django_dnf',
     'localflavor',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +89,8 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'bolo_users.User'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -128,7 +131,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
 
-LOGIN_URL = ''
-LOGIN_REDIRECT_URL = ''
+# LOGIN_URL = ''
+# LOGIN_REDIRECT_URL = ''
