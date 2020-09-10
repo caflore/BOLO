@@ -39,7 +39,7 @@ class BoloImage(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
 
-class BoloSubscribers(models.Model):
+class BoloSubscriber(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bolo = models.ForeignKey(Bolo, related_name="subscribed_bolos", on_delete=models.CASCADE)
     subscribed_on = models.DateTimeField(auto_now_add=True)
