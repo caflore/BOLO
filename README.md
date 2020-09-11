@@ -14,13 +14,13 @@
     * [Brew](https://brew.sh/) (MacOS).
 
 * Install virtualenv
-    ```
-    pip install virtualenv
-    ```
-    or
-    ```
-    pip3 install virtualenv
-    ```
+    *   ```
+        pip install virtualenv
+        ```
+        or
+    *   ```
+        pip3 install virtualenv
+        ```
 
 ## MacOS
 
