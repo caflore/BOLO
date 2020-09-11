@@ -11,12 +11,14 @@
 # Get Started
 
 * Install python (Use whatever method you want. Make sure it is in system path).
-    * [Brew](brew.sh) (MacOS).
+    * [Brew](https://brew.sh/) (MacOS).
 
 * Install virtualenv
     ```
     pip install virtualenv
-    \\ or
+    ```
+    or
+    ```
     pip3 install virtualenv
     ```
 
@@ -25,6 +27,13 @@
 * Navigate to directory you wish to develop in.
 
 ```
-mkdir 
+mkdir BOLO
+cd BOLO
+virtualenv -p python3.8 venv
+source venv/bin/activate
+git clone https://github.com/cflore/BOLO.git
+cd BOLO
+pip install -r requirements.txt
+python manage.py runserver
 ```
 ## Windows
