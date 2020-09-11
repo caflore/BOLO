@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Custom
+    'bolo_app',
     'bolo_users',
     'bolo_flyers',
 
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'django_dnf',
     'localflavor',
     'phonenumber_field',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -129,9 +131,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT used for deployment.
+# STATIC_ROOT = '/var/www/bolo.com/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
 
-# LOGIN_URL = ''
-# LOGIN_REDIRECT_URL = ''
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'bolo-home'

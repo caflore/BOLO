@@ -1,0 +1,28 @@
+{% extends "bolo_app/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>BOLO | Login</title>
+{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="card rounded shadow shadow-sm">
+        <div class="card-header">
+            <h3 class="mb-0 text-center">Login</h3>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form| crispy}}
+                <div class="form-group text-center">
+                    <button class="btn btn-block btn-dark" type="submit">Login</button>
+                </div>
+            </form>
+            <div class="text-center">
+                <small class="text-muted">Need an Account? <a href="#">Contact Us</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
