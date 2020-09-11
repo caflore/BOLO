@@ -6,6 +6,8 @@
 
 * **[Get Started](#get-started)**
 
+* **[Notes](#notes)**
+
 ***
 
 # Get Started

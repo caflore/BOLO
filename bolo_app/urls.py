@@ -23,5 +23,7 @@ urlpatterns = [
     path('', auth_views.LoginView.as_view(template_name='bolo_app/login.html')),
     path('login/', auth_views.LoginView.as_view(template_name='bolo_app/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='bolo_app/logout.html'), name='logout'),
-    path('home/', views.home, name='bolo-home'),
+    path('about/', views.about, name='bolo_app-about'),
+    path('contact/', views.contact, name='bolo_app-contact'),
+    path('bolo/', views.bolos, name='bolo'),
 ]
