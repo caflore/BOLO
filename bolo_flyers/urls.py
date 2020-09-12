@@ -17,12 +17,8 @@ from django.urls import path
 
 from django.contrib.auth import views as auth_views
 
-from bolo_app import views
+from bolo_flyers import views
 
 urlpatterns = [
-    path('', auth_views.LoginView.as_view(template_name='bolo_app/login.html')),
-    path('login/', auth_views.LoginView.as_view(template_name='bolo_app/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='bolo_app/logout.html'), name='logout'),
-    path('about/', views.about, name='bolo_app-about'),
-    path('contact/', views.contact, name='bolo_app-contact'),
+    path('bolos/', views.BoloListView.as_view(), name='bolos'),
 ]

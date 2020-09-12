@@ -22,4 +22,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('bolo_app.urls')),
+    path('', include('bolo_flyers.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
