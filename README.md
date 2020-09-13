@@ -19,7 +19,6 @@
     *   ```
         pip install virtualenv
         ```
-        or
     *   ```
         pip3 install virtualenv
         ```
