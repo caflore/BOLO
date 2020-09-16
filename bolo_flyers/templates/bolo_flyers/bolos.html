@@ -2,9 +2,43 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-<title>BOLO</title>
+<title>BOLO | BOLOs</title>
 {% endblock title %}
 
 {% block content %}
-Bolo
+<h1 class="mt-4 mb-3">BOLOs</h1>
+
+<form class="form-inline float-right mb-3">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+
+<table class="table table-hover table-striped border">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Agnecy</th>
+            <th scope="col">Category</th>
+            <th scope="col">Location</th>
+            <th scope="col">Author</th>
+            <th scope="col">Reported Date</th>
+            <th scope="col">Updated</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>?</td>
+            <td>?</td>
+            <td>?</td>
+            <td>?</td>
+            <td>?</td>
+            <td>?</td>
+            <td>?</td>
+        </tr>
+    </tbody>
+</table>
+
 {% endblock content %}

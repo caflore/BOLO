@@ -1,4 +1,5 @@
 from django.db import models
+from localflavor.us.models import USStateField, USZipCodeField
 
 from bolo_users.models import User
 

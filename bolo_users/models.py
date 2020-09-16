@@ -8,6 +8,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Agency(models.Model):
 
     name = models.CharField(max_length=100)
+    acronym = models.CharField(max_length=10)
     domain = DomainNameField()
     phone = PhoneNumberField()
     agency_logo = models.ImageField(default='default_agency_logo.png', upload_to='agency_logos')
