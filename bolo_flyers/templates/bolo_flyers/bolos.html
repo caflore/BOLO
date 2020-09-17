@@ -8,28 +8,28 @@
 {% block content %}
 <h1 class="mt-4 mb-3">BOLOs</h1>
 
-<form class="form-inline float-right mb-3">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-</form>
+<div class="mb-3">
+    <input class="form-control mr-sm-2" id="myInput" type="search" placeholder="Search...">
+</div>
 
 
-<table class="table table-hover table-striped border">
+<table id="boloTable" data-filter-control="true" class="table table-hover table-striped border">
     <thead class="thead-light">
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Agnecy</th>
-            <th scope="col">Category</th>
-            <th scope="col">Location</th>
-            <th scope="col">Author</th>
-            <th scope="col">Reported Date</th>
-            <th scope="col">Updated</th>
-            <th scope="col">Status</th>
+            <th data-field="id" scope="col">ID</th>
+            <th data-field="agency" data-filter-control="select" scope="col" data-sortable="true">Agnecy</th>
+            <th data-field="category" data-filter-control="select" data-sortable="true" scope="col">Category</th>
+            <th data-field="location" data-filter-control="select" data-sortable="true" scope="col">Location</th>
+            <th data-field="author" scope="col">Author</th>
+            <th data-field="report_date" data-sortable="true" scope="col">Reported Date
+            </th>
+            <th data-field="update_date" data-sortable="true" scope="col">Updated</th>
+            <th data-field="price" data-filter-control="select" scope="col">Status</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th scope="row">1</th>
+            <th scope="row">?</th>
             <td>?</td>
             <td>?</td>
             <td>?</td>
@@ -40,5 +40,4 @@
         </tr>
     </tbody>
 </table>
-
 {% endblock content %}

@@ -9,6 +9,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.17.1/bootstrap-table.min.css"
+        integrity="sha512-zfridm8+ad8KSyxzl1REhqDP5975y8Q0AYaF22bcVGOnaVxlekxODmCGu0TP+Kbk3JbiNK5ENTHs7pT+yf+rBA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.17.1/extensions/filter-control/bootstrap-table-filter-control.min.css"
+        integrity="sha512-viVAoKXwHDhGUd8A2YIzQW7msSBYE4vQUFKgsXlORYxbJ+h21lDggF8sP3ApGgJ6wKekGON7k42cKsPeXjy7lA=="
+        crossorigin="anonymous" />
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'bolo_app/css/bolo.css' %}">
@@ -122,11 +129,29 @@
         integrity="sha512-jepMQuC62NmdjYDXqCfVs6AyIkNs8HLQk26iICpQrJR9tDbvl5bYj88bVmCFgvnD2Y6LIhJIOqYWKGsQf2lT1Q=="
         crossorigin="anonymous"></script>
 
+    <!-- Move scripts to seperate file later -->
     <!-- Menu Toggle Script -->
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('#boloTable').bootstrapTable()
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
         });
     </script>
 
