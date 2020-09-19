@@ -25,8 +25,8 @@
     </thead>
     <tbody>
         {% for agency in agencies %}
-        <tr class="clickable-row" data-href="{% url 'bolo-agency-detail' agency.id %}">
-            <th scope="row">{{ agency.id }}</th>
+        <tr>
+            <th scope="row"><a href="{% url 'bolo-agency-detail' agency.id %}">{{ agency.id }}</a></th>
             <td>{{ agency.acronym }}</td>
             <td>{{ agency.phone }}</td>
             <td>{{ agency.state }}</td>

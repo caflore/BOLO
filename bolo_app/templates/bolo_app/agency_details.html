@@ -1,0 +1,12 @@
+{% extends "bolo_app/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>BOLO</title>
+{% endblock title %}
+
+{% block content %}
+{{ agency.id }}
+<br>
+{{ agency.city}}, {{ agency.state }}
+{% endblock content %}

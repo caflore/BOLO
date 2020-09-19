@@ -34,8 +34,8 @@
     </thead>
     <tbody>
         {% for bolo in bolos %}
-        <tr class="clickable-row" data-href="#">
-            <th scope="row">{{ bolo.id }}</th>
+        <tr>
+            <th scope="row"><a href="{% url 'bolo-details' bolo.id %}">{{ bolo.id }}</a></th>
             <td>{{ bolo.author.agency.acronym }}</td>
             <td>{{ bolo.category }}</td>
             <td>{{ bolo.city }}, {{ bolo.state }}</td>
