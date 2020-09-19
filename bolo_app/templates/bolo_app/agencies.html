@@ -24,13 +24,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">?</th>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
+        {% for agency in agencies %}
+        <tr class="clickable-row" data-href="{% url 'bolo-agency-detail' agency.id %}">
+            <th scope="row">{{ agency.id }}</th>
+            <td>{{ agency.acronym }}</td>
+            <td>{{ agency.phone }}</td>
+            <td>{{ agency.state }}</td>
+            <td>{{ agency.city }}</td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
 {% endblock content %}

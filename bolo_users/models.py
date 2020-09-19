@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django_dnf.fields import DomainNameField
 from localflavor.us.models import USStateField, USZipCodeField
 from phonenumber_field.modelfields import PhoneNumberField
+from PIL import Image
 
 class Agency(models.Model):
 
@@ -31,6 +32,31 @@ class Agency(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def save(self):
+        super().save()
+
+        logo = Image.open(self.agency_logo.path)
+
+        if logo.height > 300 or logo.width > 300:
+            output_size = (300, 300)
+            logo.thumbnail(output_size)
+            logo.save(self.agency_logo.path)
+
+        shield = Image.open(self.agency_sheild.path)
+
+        if shield.height > 300 or shield.width > 300:
+            output_size = (300, 300)
+            shield.thumbnail(output_size)
+            shield.save(self.agency_sheild.path)
+
+        watermark = Image.open(self.agency_watermark.path)
+
+        if watermark.height > 300 or watermark.width > 300:
+            output_size = (300, 300)
+            watermark.thumbnail(output_size)
+            watermark.save(self.agency_watermark.path)
+
 
 class Unit(models.Model):
 

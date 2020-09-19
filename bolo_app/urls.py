@@ -28,5 +28,5 @@ urlpatterns = [
     path('contact/', views.contact, name='bolo-contact'),
     path('dashboard/', views.dashboard, name='bolo-dash'),
     path('agencies/', AgencyListView.as_view(), name='bolo-agencies'),
-    path('agencies/<pk>', AgencyDetailView.as_view(), name='bolo-agency-detail'),
+    path('agencies/<pk>/', AgencyDetailView.as_view(), name='bolo-agency-detail'),
 ]

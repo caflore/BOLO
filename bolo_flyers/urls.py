@@ -21,5 +21,5 @@ from bolo_flyers import views
 
 urlpatterns = [
     path('bolos/', views.BoloListView.as_view(), name='bolos'),
-    path('bolos/<pk>', views.BoloDetailView.as_view(), name='bolo-details'),
+    path('bolos/<pk>/', views.BoloDetailView.as_view(), name='bolo-details'),
 ]

@@ -31,6 +31,11 @@ class Bolo(models.Model):
     video_url = models.URLField(blank=True, null=True)
     description = models.TextField()
 
+    address_1 = models.CharField(max_length=128, blank=True, null=True)
+    city = models.CharField(max_length=64, blank=True, null=True)
+    state = USStateField(blank=True, null=True)
+    zip_code = USZipCodeField(max_length=5, blank=True, null=True)
+
     reported_date = models.DateField()
     reported_time = models.TimeField()
     
@@ -39,6 +44,9 @@ class Bolo(models.Model):
 
     is_active = models.BooleanField(default=True)
     is_internal = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.id)
 
 class BoloImage(models.Model):
     bolo = models.ForeignKey(Bolo, on_delete=models.PROTECT)

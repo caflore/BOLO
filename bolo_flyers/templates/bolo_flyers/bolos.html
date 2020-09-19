@@ -6,7 +6,7 @@
 {% endblock title %}
 
 {% block content %}
-<h1 class="mt-4 mb-3">BOLOs 
+<h1 class="mt-4 mb-3">BOLOs
     <a class="btn btn-dark float-right" href="#" role="button">Create
         <i class="fas fa-plus ml-2"></i>
     </a>
@@ -17,7 +17,8 @@
 </div>
 
 
-<table id="table" data-filter-control="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]" class="table table-hover table-striped border">
+<table id="table" data-filter-control="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]"
+    class="table table-hover table-striped border">
     <thead class="thead-light">
         <tr>
             <th data-field="id" scope="col">ID</th>
@@ -32,16 +33,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">?</th>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
+        {% for bolo in bolos %}
+        <tr class="clickable-row" data-href="#">
+            <th scope="row">{{ bolo.id }}</th>
+            <td>{{ bolo.author.agency.acronym }}</td>
+            <td>{{ bolo.category }}</td>
+            <td>{{ bolo.city }}, {{ bolo.state }}</td>
+            <td>{{ bolo.author.last_name }}, {{ bolo.author.first_name }}</td>
+            <td>{{ bolo.reported_date }}</td>
+            <td>{{ bolo.modified_date }}</td>
+            <td>{{ bolo.status }}</td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
 {% endblock content %}
