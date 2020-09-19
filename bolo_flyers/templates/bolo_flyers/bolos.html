@@ -6,14 +6,18 @@
 {% endblock title %}
 
 {% block content %}
-<h1 class="mt-4 mb-3">BOLOs</h1>
+<h1 class="mt-4 mb-3">BOLOs 
+    <a class="btn btn-dark float-right" href="#" role="button">Create
+        <i class="fas fa-plus ml-2"></i>
+    </a>
+</h1>
 
 <div class="mb-3">
     <input class="form-control mr-sm-2" id="myInput" type="search" placeholder="Search...">
 </div>
 
 
-<table id="boloTable" data-filter-control="true" class="table table-hover table-striped border">
+<table id="table" data-filter-control="true" data-pagination="true" data-page-list="[10, 25, 50, 100, all]" class="table table-hover table-striped border">
     <thead class="thead-light">
         <tr>
             <th data-field="id" scope="col">ID</th>

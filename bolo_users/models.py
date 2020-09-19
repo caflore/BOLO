@@ -8,7 +8,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Agency(models.Model):
 
     name = models.CharField(max_length=100)
-    acronym = models.CharField(max_length=10)
+    acronym = models.CharField(max_length=10, default=None, null=True)
     domain = DomainNameField()
     phone = PhoneNumberField()
     agency_logo = models.ImageField(default='default_agency_logo.png', upload_to='agency_logos')
@@ -38,11 +38,17 @@ class Unit(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
+
 class Rank(models.Model):
 
     name = models.CharField(max_length=128)
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
 
 class UserManager(BaseUserManager):
     

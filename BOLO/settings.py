@@ -140,4 +140,4 @@ MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'bolo_app-dash'
+LOGIN_REDIRECT_URL = 'bolo-dash'
