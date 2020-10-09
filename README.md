@@ -1,5 +1,6 @@
 # BOLO
 
+Experimented on rebuilding FIUs BOLO project using the Django Web Framework.
 ***
 
 # Table of Contents
